@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heizlast-Berechnung nach DIN EN 12831</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Heizlast-Berechnung</h1>
+            <p class="subtitle">Vereinfacht nach DIN EN 12831</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="card" id="project-settings">
+            <h2>Projektdaten</h2>
+            <div class="form-row">
+                <div class="form-group" style="flex:2; min-width:220px;">
+                    <label for="project-name">Projektbezeichnung</label>
+                    <input type="text" id="project-name" placeholder="z.B. Einfamilienhaus Musterstraße 1">
+                </div>
+                <div class="form-group">
+                    <label for="city-select">Standort</label>
+                    <select id="city-select">
+                        <option value="custom">— Benutzerdefiniert —</option>
+                        <option value="Flensburg">Flensburg (−12 °C)</option>
+                        <option value="Hamburg" selected>Hamburg (−12 °C)</option>
+                        <option value="Rostock">Rostock (−14 °C)</option>
+                        <option value="Berlin">Berlin (−14 °C)</option>
+                        <option value="Hannover">Hannover (−13 °C)</option>
+                        <option value="Dortmund">Dortmund (−11 °C)</option>
+                        <option value="Düsseldorf">Düsseldorf (−10 °C)</option>
+                        <option value="Köln">Köln (−10 °C)</option>
+                        <option value="Kassel">Kassel (−14 °C)</option>
+                        <option value="Frankfurt am Main">Frankfurt am Main (−12 °C)</option>
+                        <option value="Erfurt">Erfurt (−16 °C)</option>
+                        <option value="Dresden">Dresden (−15 °C)</option>
+                        <option value="Leipzig">Leipzig (−15 °C)</option>
+                        <option value="Stuttgart">Stuttgart (−13 °C)</option>
+                        <option value="Nürnberg">Nürnberg (−16 °C)</option>
+                        <option value="Freiburg">Freiburg (−11 °C)</option>
+                        <option value="München">München (−16 °C)</option>
+                        <option value="Garmisch">Garmisch-Partenkirchen (−20 °C)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="temp-outdoor">Norm-Außentemp. T<sub>e</sub> (°C)</label>
+                    <input type="number" id="temp-outdoor" value="-12" step="0.5">
+                </div>
+                <div class="form-group">
+                    <label for="temp-indoor">Innentemperatur T<sub>i</sub> (°C)</label>
+                    <input type="number" id="temp-indoor" value="20" step="0.5">
+                </div>
+            </div>
+            <div class="form-row" style="margin-top:12px;">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="thermal-bridge" checked>
+                    Wärmebrückenzuschlag +10 % auf H<sub>T</sub> (vereinfacht, empfohlen)
+                </label>
+            </div>
+        </section>
+
+        <div id="rooms-container"></div>
+
+        <div class="add-room-wrapper">
+            <button class="btn btn-primary" id="btn-add-room">+ Raum hinzufügen</button>
+        </div>
+
+        <section class="card results-card" id="total-results">
+            <h2>Gesamtergebnis</h2>
+            <div id="results-content">
+                <p class="hint">Fügen Sie Räume hinzu, um die Berechnung zu starten.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            Heizlast-Berechnung vereinfacht nach DIN EN 12831 &mdash;
+            Keine Gewähr für die Richtigkeit der Ergebnisse.
+            Für Auslegung von Heizungsanlagen ist eine Fachberechnung erforderlich.
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
