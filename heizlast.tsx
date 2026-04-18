@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Heizlastberechnung</title>
-  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-</head>
-<body>
-  <div id="root"></div>
-  <script type="text/babel">
-const { useState } = React;
+import { useState } from "react";
 
 const ROOM_HEIGHT = 2.3;
 const INDOOR_TEMP = 20;
@@ -178,6 +165,7 @@ function DeviceDetail({ s, temp, calc, units, onBack }) {
   const modPct = maxKw > 0 ? Math.round((minKw/maxKw)*100) : 0;
   const totalIU = (s.indoorUnits||[]).reduce((a,u) => a+(Number(u.kw)||0), 0);
   const temps = [-15,-12,-10,-8,-5,-2,0,2,5,7,10,12,15];
+  const inp = { background:"var(--bg)", border:"1px solid var(--border)", color:"var(--text)", borderRadius:4, padding:"6px 8px", fontSize:12, fontFamily:"inherit" };
 
   return (
     <div>
@@ -370,7 +358,7 @@ function DeviceDetail({ s, temp, calc, units, onBack }) {
         </table>
       </div>
       <p style={{ fontSize:11, color:"var(--muted)", marginTop:24, lineHeight:1.6 }}>
-        Kapazitaetswerte linear interpoliert zwischen Nennleistung (+7C) und Herstellerangabe (-10C) gemaess EN14825. Alle Angaben ohne Gewaehr.
+        Kapazitaetswerte linear interpoliert zwischen Nennleistung (+7C) und Herstellerangabe (-10C) gemäss EN14825. Alle Angaben ohne Gewähr.
       </p>
     </div>
   );
@@ -454,7 +442,7 @@ function SetModal({ set, unitCount, onSave, onDelete, onClose }) {
   );
 }
 
-function App() {
+export default function App() {
   const [temp, setTemp]             = useState(-10);
   const [indoorTemp, setIndoorTemp] = useState(INDOOR_TEMP);
   const [baseWatt, setBaseWatt]     = useState(BASE_WATT);
@@ -623,7 +611,7 @@ function App() {
               );
             })}
             <button className="add-btn" onClick={()=>setEditUnit("new")}>+ Neue Einheit hinzufuegen</button>
-            <p className="disclaimer">{baseWatt} W/m2 Basis bei -10 C / {indoorTemp} C innen · Kapazitaetskurve interpoliert zwischen Nenn +7C und Spez. -10C · SCOP gemaess EN14825</p>
+            <p className="disclaimer">{baseWatt} W/m2 Basis bei -10 C / {indoorTemp} C innen · Kapazitaetskurve interpoliert zwischen Nenn +7C und Spez. -10C · SCOP gemäss EN14825</p>
           </>)}
 
           {tab===1 && (<>
@@ -673,9 +661,3 @@ function App() {
     </>
   );
 }
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<App />);
-  </script>
-</body>
-</html>
