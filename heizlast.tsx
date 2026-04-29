@@ -19,23 +19,22 @@ function fmt(w) { return w >= 1000 ? (w / 1000).toFixed(1) + " kW" : Math.round(
 
 const SETS = [
   {
-    name: "Daikin 3MXM68A9 + Perfera (Ferienwohnung)",
-    heat_min_kw: 1.7, heat_nom_kw: 8.6, heat_max_kw: 10.5, heat_m10_kw: 5.5, scop: 4.26, target: 0,
-    seer: 7.71, cool_nom_kw: 6.8, cool_min_kw: 2.0, cool_max_kw: 8.0,
-    energy_class_heat: "A+", energy_class_cool: "A++",
-    op_heat_min: -15, op_heat_max: 24, op_cool_min: -10, op_cool_max: 46, refrigerant: "R32",
-    energy_annual_heat: 2350, energy_annual_cool: 343, pdesignh: 5.5, pdesignc: 6.8,
-    dimensions: "734 x 974 x 408 mm", weight: "65 kg",
-    noise_cool: 50, noise_heat: 51, sound_power_cool: 64, sound_power_heat: 64,
-    pipe_length_max: "60 m gesamt, max. 25 m je IG",
-    refrigerant_amount: "1,9 kg (R32), vorgefuellt fuer 30 m",
-    power_input_heat: "1,93 (0,30-2,80) kW", power_input_cool: "1,89 (0,30-2,90) kW",
-    bafa: "Ja (Daikin EKRHH Home Hub Adapter erforderlich)",
-    shopUrl: "https://www.breeze24.com/klimaanlagen/aussengeraete/aussengeraete-split-systeme/aussengeraete-fuer-bis-zu-3-innengeraete/daikin-3mxm68a-klimaanlagen-aussengeraet-6-8-kw-fuer-3-innengeraete",
+    name: "Mitsubishi Heavy SCM60ZS-W + SRK-ZS-WF (Ferienwohnung)",
+    heat_min_kw: 1.0, heat_nom_kw: 6.8, heat_max_kw: 7.8, heat_m10_kw: 4.7, scop: 4.60, target: 0,
+    seer: 8.80, cool_nom_kw: 6.0, cool_min_kw: 1.7, cool_max_kw: 7.5,
+    energy_class_heat: "A++", energy_class_cool: "A+++",
+    op_heat_min: -20, op_heat_max: 24, op_cool_min: -15, op_cool_max: 46, refrigerant: "R32",
+    pdesignh: 4.7, pdesignc: 6.0,
+    dimensions: "640 x 915 x 290 mm", weight: "48,5 kg",
+    noise_cool: 50, noise_heat: 52, sound_power_cool: 62, sound_power_heat: 64,
+    pipe_length_max: "40 m gesamt, max. 15 m je IG",
+    refrigerant_amount: "1,80 kg (R32), vorgefuellt fuer 40 m",
+    bafa: "Ja (SC-BIKN2-E Adapterplatine + RC-EX3A Kabelsteuerung erforderlich)",
+    shopUrl: "https://www.breeze24.com/klimaanlagen/klimaanlage-sets/monosplit-und-multisplit-set/multisplit/wandgeraete/3-wandgeraete/mitsubishi-heavy-set-srk20zs-wf-srk25zs-wf-srk35zs-wf-scm60zs-w-klimaanlage-2-0/2-5/3-5kw-wifi",
     indoorUnits: [
-      { name: "CTXM15A Perfera (Bad)", kw: 1.5 },
-      { name: "FTXM25A Perfera (Schlafzimmer)", kw: 2.5 },
-      { name: "FTXM35A Perfera (Wohnzimmer)", kw: 3.5 },
+      { name: "SRK20ZS-WF (Bad)", kw: 2.0 },
+      { name: "SRK25ZS-WF (Schlafzimmer)", kw: 2.5 },
+      { name: "SRK35ZS-WF (Wohnzimmer)", kw: 3.5 },
     ],
   },
   {
@@ -625,8 +624,11 @@ export default function App() {
               return (
                 <div className="card" key={i} style={{ marginBottom:16 }}>
                   <div className="blue-hdr">
-                    <div>
+                    <div style={{ display:"flex", alignItems:"center", flexWrap:"wrap", gap:6 }}>
                       <span className="dev-link" style={{ fontSize:14, fontWeight:700, color:"var(--accent2)", letterSpacing:.3 }} onClick={()=>setDetailSet(s)}>{s.name}</span>
+                      {s.bafa && s.bafa.startsWith("Ja") && (
+                        <span style={{ background:"#064e3b", border:"1px solid #10b981", color:"#10b981", borderRadius:4, padding:"1px 7px", fontSize:9, fontWeight:700, letterSpacing:.7, whiteSpace:"nowrap" }}>BAFA-FOERDERBAR</span>
+                      )}
                       <button className="edit-btn" onClick={()=>setEditSet(i)}>Bearb.</button>
                     </div>
                     <span style={{ fontSize:11, color:"var(--muted)" }}>Heizlast {targetUnit?.name||"-"}: {fmt(targetLoad)} · Deckung @ {temp}°C: <b style={{ color:coverCol }}>{cover}%</b></span>
