@@ -17,71 +17,7 @@ function capacityAtTemp(s, t) {
 
 function fmt(w) { return w >= 1000 ? (w / 1000).toFixed(1) + " kW" : Math.round(w) + " W"; }
 
-const SETS = [
-  {
-    name: "Mitsubishi Electric MXZ-3F54VF4", heat_min_kw: 2.6, heat_nom_kw: 7.0, heat_max_kw: 9.0, heat_m10_kw: 4.5, scop: 4.31, target: 0,
-    seer: 8.52, cool_nom_kw: 5.4, cool_min_kw: 2.9, cool_max_kw: 6.8, energy_class_heat: "A+", energy_class_cool: "A++",
-    op_heat_min: -15, op_heat_max: 24, op_cool_min: -10, op_cool_max: 46, refrigerant: "R32", energy_annual_heat: 1960, energy_annual_cool: 462,
-    dimensions: "710 x 840 x 330 mm", weight: "57 kg", noise_cool: 46, noise_heat: 50, sound_power_cool: 60, sound_power_heat: 60,
-    pipe_length_max: "50 m gesamt, max. 25 m je IG", refrigerant_amount: "2,4 kg (R32), vorgefuellt fuer 50 m",
-    power_input_heat: "1,40 kW", power_input_cool: "1,32 kW", bafa: "Nein",
-    shopUrl: "https://www.breeze24.com/klimaanlagen/klimaanlage-sets/monosplit-und-multisplit-set/multisplit/wandgeraete/3-wandgeraete/mitsubishi-electric-set-msz-ef18vgkw-2-x-msz-ef35vgkw-mxz-3f54vf4-wandgeraete-premium",
-    indoorUnits: [{ name: "MSZ-EF18VGKW", kw: 3.3 }, { name: "MSZ-EF35VGKW", kw: 4.0 }, { name: "MSZ-EF35VGKW", kw: 4.0 }],
-  },
-  {
-    name: "Daikin 3MXM52A", heat_min_kw: 1.5, heat_nom_kw: 6.8, heat_max_kw: 8.2, heat_m10_kw: 3.9, scop: 4.65, target: 0,
-    seer: 8.52, cool_nom_kw: 5.2, energy_class_heat: "A++", energy_class_cool: "A+++",
-    op_heat_min: -15, op_heat_max: 24, op_cool_min: -10, op_cool_max: 46, refrigerant: "R32",
-    dimensions: "734 x 974 x 408 mm", weight: "57 kg", noise_cool: 46, noise_heat: 47, sound_power_cool: 59, sound_power_heat: 59,
-    pipe_length_max: "50 m gesamt, max. 25 m je IG", refrigerant_amount: "1,8 kg (R32), vorgefuellt fuer 30 m",
-    power_input_heat: "0,30-2,58 kW", power_input_cool: "0,30-2,58 kW", bafa: "Nein",
-    shopUrl: "https://www.breeze24.com/klimaanlagen/klimaanlage-sets/monosplit-und-multisplit-set/multisplit/wandgeraete/3-wandgeraete/daikin-set-3-wandgeraete-perfera-wifi-ctxm15a-2-x-ftxm35a-3mxm52a2v1b",
-    indoorUnits: [{ name: "CTXM15A", kw: 2.0 }, { name: "FTXM35A", kw: 4.0 }, { name: "FTXM35A", kw: 4.0 }],
-  },
-  {
-    name: "Mitsubishi Heavy SCM41ZS-W", heat_min_kw: 1.0, heat_nom_kw: 4.5, heat_max_kw: 6.9, heat_m10_kw: 3.4, scop: 4.60, target: 0,
-    seer: 9.20, cool_nom_kw: 4.0, cool_min_kw: 1.4, cool_max_kw: 6.3, energy_class_heat: "A++", energy_class_cool: "A+++",
-    op_heat_min: -15, op_heat_max: 24, op_cool_min: -15, op_cool_max: 46, refrigerant: "R32",
-    energy_annual_heat: 1034, energy_annual_cool: 153, pdesignh: 3.4, pdesignc: 4.0,
-    dimensions: "640 x 915 x 290 mm", weight: "42,5 kg", noise_cool: 49, noise_heat: 52, sound_power_cool: 62, sound_power_heat: 64,
-    pipe_length_max: "40 m gesamt, max. 25 m je IG", refrigerant_amount: "1,8 kg (R32), vorgefuellt fuer 40 m",
-    power_input_heat: "0,81 (0,25-1,58) kW", power_input_cool: "0,72 (0,32-1,65) kW", bafa: "Ja (Netzdienlichkeitsadapter als Zubehoer)",
-    shopUrl: "https://www.breeze24.com/klimaanlagen/klimaanlage-sets/monosplit-und-multisplit-set/multisplit/wandgeraete/3-wandgeraete/mitsubishi-heavy-set-srk15zs-wf-srk20zs-wf-srk35zs-wf-scm41zs-w",
-    indoorUnits: [{ name: "SRK15ZS-WF", kw: 2.0 }, { name: "SRK20ZS-WF", kw: 2.7 }, { name: "SRK35ZS-WF", kw: 4.0 }],
-  },
-  {
-    name: "Mitsubishi Heavy SCM30ZS-W", heat_min_kw: 1.0, heat_nom_kw: 4.0, heat_max_kw: 5.7, heat_m10_kw: 2.8, scop: 4.80, target: 1,
-    seer: 8.60, cool_nom_kw: 3.0, cool_min_kw: 1.4, cool_max_kw: 5.0, energy_class_heat: "A++", energy_class_cool: "A+++",
-    op_heat_min: -15, op_heat_max: 24, op_cool_min: -15, op_cool_max: 46, refrigerant: "R32",
-    energy_annual_heat: 962, energy_annual_cool: 123,
-    dimensions: "595 x 870 x 290 mm", weight: "35,5 kg", noise_cool: 49, noise_heat: 51, sound_power_cool: 62, sound_power_heat: 64,
-    pipe_length_max: "30 m gesamt, max. 25 m je IG", refrigerant_amount: "1,25 kg (R32), vorgefuellt fuer 30 m",
-    power_input_heat: "0,74 (0,25-1,49) kW", power_input_cool: "0,52 (0,32-1,60) kW", bafa: "Ja (Netzdienlichkeitsadapter als Zubehoer)",
-    shopUrl: "https://www.breeze24.com/klimaanlagen/klimaanlage-sets/monosplit-und-multisplit-set/multisplit/wandgeraete/2-wandgeraete/mitsubishi-heavy-set-2-x-srk15zs-wf-scm30zs-w-wandgeraete-1-5-kw-wifi-r32",
-    indoorUnits: [{ name: "SRK15ZS-WF", kw: 2.0 }, { name: "SRK15ZS-WF", kw: 2.0 }],
-  },
-  {
-    name: "Daikin 2MXM50A", heat_min_kw: 1.1, heat_nom_kw: 5.0, heat_max_kw: 5.6, heat_m10_kw: 3.5, scop: 4.60, target: 1,
-    seer: 8.52, cool_nom_kw: 5.0, energy_class_heat: "A++", energy_class_cool: "A+++",
-    op_heat_min: -20, op_heat_max: 16, op_cool_min: -10, op_cool_max: 46, refrigerant: "R32",
-    dimensions: "552 x 852 x 350 mm", weight: "41 kg", noise_cool: 46, noise_heat: 48, sound_power_cool: 60, sound_power_heat: 62,
-    pipe_length_max: "30 m gesamt, max. 20 m je IG", refrigerant_amount: "1,15 kg (R32), vorgefuellt fuer 20 m",
-    power_input_heat: "0,23-1,75 kW", power_input_cool: "0,23-1,75 kW", bafa: "Ja",
-    shopUrl: "https://www.breeze24.com/klimaanlagen/klimaanlage-sets/monosplit-und-multisplit-set/multisplit/wandgeraete/2-wandgeraete/daikin-set-ctxa15cw-ftxa20cw-2mxm50a2v1b-wandgeraete-stylish-wifi-r32",
-    indoorUnits: [{ name: "CTXA15CW", kw: 2.0 }, { name: "FTXA20CW", kw: 2.5 }],
-  },
-  {
-    name: "Panasonic CU-2Z35CBE", heat_min_kw: 1.1, heat_nom_kw: 4.2, heat_max_kw: 5.6, heat_m10_kw: 3.2, scop: 4.60, target: 1,
-    seer: 8.50, cool_nom_kw: 3.5, cool_min_kw: 1.5, cool_max_kw: 4.5, energy_class_heat: "A++", energy_class_cool: "A+++",
-    op_heat_min: -15, op_heat_max: 24, op_cool_min: -10, op_cool_max: 46, refrigerant: "R32",
-    energy_annual_heat: 974, energy_annual_cool: 144, pdesignh: 3.2, pdesignc: 3.5,
-    dimensions: "619 x 824 x 299 mm", weight: "39 kg", noise_cool: 48, noise_heat: 50, sound_power_cool: 63, sound_power_heat: 65,
-    pipe_length_max: "6-30 m (je IG 3-20 m)", refrigerant_amount: "1,12 kg (R32), vorgefuellt fuer 20 m",
-    power_input_heat: "0,86 (0,21-1,34) kW", power_input_cool: "0,72 (0,25-1,10) kW", bafa: "Ja (Netzdienlichkeitsadapter als Zubehoer)",
-    shopUrl: "https://www.breeze24.com/klimaanlagen/klimaanlage-sets/monosplit-und-multisplit-set/multisplit/wandgeraete/2-wandgeraete/panasonic-set-2-wandgeraete-cs-mz16zke-cz-z25zkew-cu-2z35tbe-r32",
-    indoorUnits: [{ name: "CS-MZ16ZKE", kw: 2.6 }, { name: "CS-Z25ZKEW", kw: 3.2 }],
-  },
-];
+const SETS = [];
 
 const defaultUnits = [
   { name: "Ferienwohnung (FW)", split: "3-fach Multisplit", rooms: [{ name: "Wohnzimmer", area: 28 }, { name: "Schlafzimmer", area: 20 }, { name: "Bad", area: 8 }] },
