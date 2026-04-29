@@ -32,6 +32,25 @@ function fmt(w) { return w >= 1000 ? (w / 1000).toFixed(1) + " kW" : Math.round(
 
 const SETS = [
   {
+    name: "Mitsubishi Heavy SCM41ZS-W + SRK15/20/35ZS-WF (Ferienwohnung)",
+    heat_min_kw: 1.0, heat_nom_kw: 4.5, heat_max_kw: 6.9, heat_m10_kw: 3.4, scop: 4.60, target: 0,
+    seer: 9.20, cool_nom_kw: 4.0, cool_min_kw: 0.9, cool_max_kw: 5.0,
+    energy_class_heat: "A++", energy_class_cool: "A+++",
+    op_heat_min: -15, op_heat_max: 24, op_cool_min: -15, op_cool_max: 46, refrigerant: "R32",
+    pdesignh: 3.4, pdesignc: 4.0,
+    dimensions: "595 x 968 x 340 mm", weight: "42,5 kg",
+    noise_cool: 47, noise_heat: 49, sound_power_cool: 62, sound_power_heat: 64,
+    pipe_length_max: "40 m gesamt, max. 15 m je IG",
+    refrigerant_amount: "1,60 kg (R32), vorgefuellt fuer 40 m",
+    bafa: "Ja (SC-BIKN2-E Adapterplatine + RC-EX3A Kabelsteuerung erforderlich)",
+    shopUrl: "https://www.breeze24.com/klimaanlagen/klimaanlage-sets/monosplit-und-multisplit-set/multisplit/wandgeraete/3-wandgeraete/mitsubishi-heavy-set-srk15zs-wf-srk20zs-wf-srk35zs-wf-scm41zs-w-wandgeraet-1-5/2-0/3-5-kw",
+    indoorUnits: [
+      { name: "SRK15ZS-WF (Bad)", kw: 1.5 },
+      { name: "SRK20ZS-WF (Schlafzimmer)", kw: 2.0 },
+      { name: "SRK35ZS-WF (Wohnzimmer)", kw: 3.5 },
+    ],
+  },
+  {
     name: "Panasonic CU-2Z35TBE + CS-MZ16ZKE + CS-Z25ZKEW (Einzelzimmer)",
     heat_min_kw: 1.1, heat_nom_kw: 4.2, heat_max_kw: 5.6, heat_m10_kw: 3.2, scop: 4.60, target: 1,
     seer: 8.50, cool_nom_kw: 3.5, cool_min_kw: 1.5, cool_max_kw: 4.5,
