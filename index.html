@@ -30,46 +30,7 @@ function capacityAtTemp(s, t) {
 
 function fmt(w) { return w >= 1000 ? (w / 1000).toFixed(1) + " kW" : Math.round(w) + " W"; }
 
-const SETS = [
-  {
-    name: "Mitsubishi Heavy SCM60ZS-W + SRK-ZS-WF (Ferienwohnung)",
-    heat_min_kw: 1.0, heat_nom_kw: 6.8, heat_max_kw: 7.8, heat_m10_kw: 4.7, scop: 4.60, target: 0,
-    seer: 8.80, cool_nom_kw: 6.0, cool_min_kw: 1.7, cool_max_kw: 7.5,
-    energy_class_heat: "A++", energy_class_cool: "A+++",
-    op_heat_min: -20, op_heat_max: 24, op_cool_min: -15, op_cool_max: 46, refrigerant: "R32",
-    pdesignh: 4.7, pdesignc: 6.0,
-    dimensions: "640 x 915 x 290 mm", weight: "48,5 kg",
-    noise_cool: 50, noise_heat: 52, sound_power_cool: 62, sound_power_heat: 64,
-    pipe_length_max: "40 m gesamt, max. 15 m je IG",
-    refrigerant_amount: "1,80 kg (R32), vorgefuellt fuer 40 m",
-    bafa: "Ja (SC-BIKN2-E Adapterplatine + RC-EX3A Kabelsteuerung erforderlich)",
-    shopUrl: "https://www.breeze24.com/klimaanlagen/klimaanlage-sets/monosplit-und-multisplit-set/multisplit/wandgeraete/3-wandgeraete/mitsubishi-heavy-set-srk20zs-wf-srk25zs-wf-srk35zs-wf-scm60zs-w-klimaanlage-2-0/2-5/3-5kw-wifi",
-    indoorUnits: [
-      { name: "SRK20ZS-WF (Bad)", kw: 2.0 },
-      { name: "SRK25ZS-WF (Schlafzimmer)", kw: 2.5 },
-      { name: "SRK35ZS-WF (Wohnzimmer)", kw: 3.5 },
-    ],
-  },
-  {
-    name: "Daikin 2MXM40A2V1B9 + Perfera (Einzelzimmer)",
-    heat_min_kw: 1.3, heat_nom_kw: 4.2, heat_max_kw: 5.7, heat_m10_kw: 3.0, scop: 4.64, target: 1,
-    seer: 8.53, cool_nom_kw: 4.0, cool_min_kw: 1.3, cool_max_kw: 4.6,
-    energy_class_heat: "A++", energy_class_cool: "A+++",
-    op_heat_min: -15, op_heat_max: 18, op_cool_min: -10, op_cool_max: 46, refrigerant: "R32",
-    energy_annual_heat: 966, energy_annual_cool: 122, pdesignh: 3.2, pdesignc: 4.0,
-    dimensions: "552 x 852 x 350 mm", weight: "36 kg",
-    noise_cool: 46, noise_heat: 47, sound_power_cool: 60, sound_power_heat: 60,
-    pipe_length_max: "30 m gesamt, max. 20 m je IG",
-    refrigerant_amount: "1,15 kg (R32), vorgefuellt fuer 20 m",
-    power_input_heat: "0,90 (0,21-1,75) kW", power_input_cool: "0,87 (0,20-1,75) kW",
-    bafa: "Ja (Daikin EKRHH Home Hub Adapter erforderlich)",
-    shopUrl: "https://www.breeze24.com/klimaanlagen/aussengeraete/aussengeraete-split-systeme/aussengeraete-fuer-bis-zu-2-innengeraete/daikin-2mxm40a2v1b9-4-0-kw-multi-split-aussengeraet-fuer-2-innengeraete-r32",
-    indoorUnits: [
-      { name: "CTXM15A Perfera (Bad)", kw: 1.5 },
-      { name: "FTXM25A Perfera (Wohnzimmer)", kw: 2.5 },
-    ],
-  },
-];
+const SETS = [];
 
 const defaultUnits = [
   { name: "Ferienwohnung (FW)", split: "3-fach Multisplit", rooms: [{ name: "Wohnzimmer", area: 28 }, { name: "Schlafzimmer", area: 20 }, { name: "Bad", area: 8 }] },
