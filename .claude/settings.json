@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "NEW=$(git log origin/claude/analyze-scripts-Pw4yW..HEAD --oneline 2>/dev/null | wc -l | tr -d ' '); if [ \"$NEW\" -gt 0 ]; then git push -u origin claude/analyze-scripts-Pw4yW 2>/dev/null || true; fi",
+            "timeout": 30,
+            "statusMessage": "Aenderungen nach GitHub pushen..."
+          }
+        ]
+      }
+    ]
+  }
+}
