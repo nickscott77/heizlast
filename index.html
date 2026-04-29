@@ -32,6 +32,25 @@ function fmt(w) { return w >= 1000 ? (w / 1000).toFixed(1) + " kW" : Math.round(
 
 const SETS = [
   {
+    name: "Daikin 3MXM68A8 + CTXM15A/FTXM35A/FTXM50A Perfera (Ferienwohnung)",
+    heat_min_kw: 1.7, heat_nom_kw: 8.6, heat_max_kw: 10.5, heat_m10_kw: 5.5, scop: 4.26, target: 0,
+    seer: 7.71, cool_nom_kw: 6.8, cool_min_kw: 2.0, cool_max_kw: 8.0,
+    energy_class_heat: "A+", energy_class_cool: "A++",
+    op_heat_min: -15, op_heat_max: 24, op_cool_min: -10, op_cool_max: 46, refrigerant: "R32",
+    energy_annual_heat: 2350, energy_annual_cool: 343, pdesignh: 5.5, pdesignc: 6.8,
+    dimensions: "734 x 974 x 408 mm", weight: "65 kg",
+    noise_cool: 50, noise_heat: 51, sound_power_cool: 64, sound_power_heat: 64,
+    pipe_length_max: "60 m gesamt, max. 25 m je IG",
+    refrigerant_amount: "1,9 kg (R32), vorgefuellt fuer 30 m",
+    bafa: "Nein",
+    shopUrl: "https://www.breeze24.com/klimaanlagen/klimaanlage-sets/monosplit-und-multisplit-set/multisplit/wandgeraete/3-wandgeraete/daikin-set-3-wandgeraete-perfera-wifi-1-5/3-5/5-0-kw-ctxm15a-ftxm35a-ftxm50a-3mxm68a8-r32",
+    indoorUnits: [
+      { name: "CTXM15A Perfera (Bad)", kw: 1.5 },
+      { name: "FTXM35A Perfera (Schlafzimmer)", kw: 3.5 },
+      { name: "FTXM50A Perfera (Wohnzimmer)", kw: 5.0 },
+    ],
+  },
+  {
     name: "Daikin 3MXM52A + CTXM15A/2×FTXM35A Perfera (Ferienwohnung)",
     heat_min_kw: 1.3, heat_nom_kw: 6.8, heat_max_kw: 8.2, heat_m10_kw: 4.8, scop: 4.65, target: 0,
     seer: 8.50, cool_nom_kw: 5.2, cool_min_kw: 1.3, cool_max_kw: 6.5,
