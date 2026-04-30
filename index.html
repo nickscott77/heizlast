@@ -32,6 +32,25 @@ function fmt(w) { return w >= 1000 ? (w / 1000).toFixed(1) + " kW" : Math.round(
 
 const SETS = [
   {
+    name: "Kältebringer KBM79-27000BTU3 3× 9000 BTU (Ferienwohnung)",
+    heat_min_kw: 1.9, heat_nom_kw: 8.3, heat_max_kw: 8.5, heat_m10_kw: 5.4, scop: 4.0, target: 0,
+    seer: 6.1, cool_nom_kw: 7.9, cool_min_kw: 1.8, cool_max_kw: 8.4,
+    energy_class_heat: "A+", energy_class_cool: "A++",
+    op_heat_min: -25, op_heat_max: 24, op_cool_min: -10, op_cool_max: 46, refrigerant: "R32",
+    pdesignh: 5.4, pdesignc: 7.9,
+    dimensions: "750 x 860 x 350 mm", weight: "52 kg",
+    noise_cool: 55, noise_heat: 55,
+    pipe_length_max: "50 m gesamt, max. 15 m je IG",
+    refrigerant_amount: "R32, vorgefuellt",
+    bafa: "Nein",
+    shopUrl: "https://www.kaeltebringer.de/products/trio-multisplit-klimaanlage-3-innengerate",
+    indoorUnits: [
+      { name: "Wandgeraet 9000 BTU (Bad)", kw: 2.65 },
+      { name: "Wandgeraet 9000 BTU (Schlafzimmer)", kw: 2.65 },
+      { name: "Wandgeraet 9000 BTU (Wohnzimmer)", kw: 2.65 },
+    ],
+  },
+  {
     name: "Daikin 3MXM68A8 + CTXM15A/FTXM35A/FTXM50A Perfera (Ferienwohnung)",
     heat_min_kw: 1.7, heat_nom_kw: 8.6, heat_max_kw: 10.5, heat_m10_kw: 5.5, scop: 4.26, target: 0,
     seer: 7.71, cool_nom_kw: 6.8, cool_min_kw: 2.0, cool_max_kw: 8.0,
