@@ -580,7 +580,7 @@ function App() {
       <style>{css}</style>
       <div className="app">
         <div className="inner">
-          <div style={{ marginBottom:20 }}><h1>HEIZLASTBERECHNUNG</h1><p className="sub">Raumhoehe: {ROOM_HEIGHT} m · {baseWatt} W/m2 Basis · Innen {indoorTemp} C / Aussen {temp} C</p></div>
+          <div style={{ marginBottom:20 }}><h1>HEIZLASTBERECHNUNG</h1><p style={{ fontSize:13, color:"var(--accent)", margin:"2px 0 2px" }}>Wittwer</p><p className="sub">Raumhoehe: {ROOM_HEIGHT} m · {baseWatt} W/m2 Basis · Innen {indoorTemp} C / Aussen {temp} C</p></div>
           <div className="tab-row">
             {["Heizlast & Raeume","Aussengeraete"].map((t,i)=>(<button key={i} className={"tab"+(tab===i?" active":"")} onClick={()=>setTab(i)}>{t}</button>))}
           </div>
