@@ -57,7 +57,7 @@ const SETS = [
     ],
   },
   {
-    name: "Daikin 3MXM68A8 + FTXA20CW/FTXA25CW/FVXM25B Stylish+Perfera (Ferienwohnung)",
+    name: "Daikin 3MXM68A8 + FTXA20CW/FTXA25CW/FVXM25B Stylish+Perfera · Wittwer (Ferienwohnung)",
     heat_min_kw: 1.7, heat_nom_kw: 8.6, heat_max_kw: 10.5, heat_m10_kw: 5.5, scop: 4.34, target: 0,
     seer: 8.54, cool_nom_kw: 6.8, cool_min_kw: 2.0, cool_max_kw: 8.0,
     energy_class_heat: "A++", energy_class_cool: "A+++",
