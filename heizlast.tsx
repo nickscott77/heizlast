@@ -69,7 +69,6 @@ const SETS = [
     refrigerant_amount: "1,9 kg (R32), vorgefuellt fuer 30 m",
     bafa: "Nein",
     shopUrl: "https://www.breeze24.com/klimaanlagen/aussengeraete/aussengeraete-split-systeme/aussengeraete-fuer-bis-zu-3-innengeraete/daikin-3mxm68a8-6-8-kw-multi-split-aussengeraet-fuer-3-innengeraete-r32",
-    note: "Wittwer",
     indoorUnits: [
       { name: "FTXA20CW Stylish (Schlafzimmer)", kw: 2.0 },
       { name: "FTXA25CW Stylish (Wohnzimmer)", kw: 2.5 },
@@ -568,7 +567,7 @@ export default function App() {
       <style>{css}</style>
       <div className="app">
         <div className="inner">
-          <div style={{ marginBottom:20 }}><h1>HEIZLASTBERECHNUNG</h1><p className="sub">Raumhoehe: {ROOM_HEIGHT} m · {baseWatt} W/m2 Basis · Innen {indoorTemp} C / Aussen {temp} C</p></div>
+          <div style={{ marginBottom:20 }}><h1>HEIZLASTBERECHNUNG</h1><p style={{ fontSize:13, color:"var(--accent)", margin:"2px 0 2px" }}>Wittwer</p><p className="sub">Raumhoehe: {ROOM_HEIGHT} m · {baseWatt} W/m2 Basis · Innen {indoorTemp} C / Aussen {temp} C</p></div>
           <div className="tab-row">
             {["Heizlast & Raeume","Aussengeraete"].map((t,i)=>(<button key={i} className={"tab"+(tab===i?" active":"")} onClick={()=>setTab(i)}>{t}</button>))}
           </div>
@@ -764,7 +763,7 @@ export default function App() {
                         ))}
                       </tbody>
                     </table>
-                    {s.shopUrl && <div style={{ marginTop:10, fontSize:11 }}><a href={s.shopUrl} target="_blank" rel="noopener noreferrer" style={{ color:"var(--accent2)", textDecoration:"underline", textDecorationStyle:"dotted" }}>→ Produktseite breeze24.com</a>{s.note && <span style={{ color:"var(--muted)", marginLeft:8 }}>· {s.note}</span>}</div>}
+                    {s.shopUrl && <div style={{ marginTop:10, fontSize:11 }}><a href={s.shopUrl} target="_blank" rel="noopener noreferrer" style={{ color:"var(--accent2)", textDecoration:"underline", textDecorationStyle:"dotted" }}>→ Produktseite breeze24.com</a></div>}
                   </div>
                 </div>
               );
