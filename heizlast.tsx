@@ -70,9 +70,9 @@ const SETS = [
     bafa: "Nein",
     shopUrl: "https://www.breeze24.com/klimaanlagen/aussengeraete/aussengeraete-split-systeme/aussengeraete-fuer-bis-zu-3-innengeraete/daikin-3mxm68a8-6-8-kw-multi-split-aussengeraet-fuer-3-innengeraete-r32",
     indoorUnits: [
-      { name: "FTXA20CW Stylish (Bad)", kw: 2.0 },
-      { name: "FTXA25CW Stylish (Schlafzimmer)", kw: 2.5 },
-      { name: "FVXM25B Perfera (Wohnzimmer)", kw: 2.4 },
+      { name: "FTXA20CW Stylish (Schlafzimmer)", kw: 2.0 },
+      { name: "FTXA25CW Stylish (Wohnzimmer)", kw: 2.5 },
+      { name: "FVXM25B Perfera (Bad)", kw: 2.4 },
     ],
   },
   {
