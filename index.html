@@ -82,6 +82,7 @@ const SETS = [
     refrigerant_amount: "1,9 kg (R32), vorgefuellt fuer 30 m",
     bafa: "Nein",
     shopUrl: "https://www.breeze24.com/klimaanlagen/aussengeraete/aussengeraete-split-systeme/aussengeraete-fuer-bis-zu-3-innengeraete/daikin-3mxm68a8-6-8-kw-multi-split-aussengeraet-fuer-3-innengeraete-r32",
+    note: "Wittwer",
     indoorUnits: [
       { name: "FTXA20CW Stylish (Schlafzimmer)", kw: 2.0 },
       { name: "FTXA25CW Stylish (Wohnzimmer)", kw: 2.5 },
@@ -793,7 +794,7 @@ function App() {
                         ))}
                       </tbody>
                     </table>
-                    {s.shopUrl && <div style={{ marginTop:10, fontSize:11 }}><a href={s.shopUrl} target="_blank" rel="noopener noreferrer" style={{ color:"var(--accent2)", textDecoration:"underline", textDecorationStyle:"dotted" }}>→ Produktseite breeze24.com</a></div>}
+                    {s.shopUrl && <div style={{ marginTop:10, fontSize:11 }}><a href={s.shopUrl} target="_blank" rel="noopener noreferrer" style={{ color:"var(--accent2)", textDecoration:"underline", textDecorationStyle:"dotted" }}>→ Produktseite breeze24.com</a>{s.note && <span style={{ color:"var(--muted)", marginLeft:8 }}>· {s.note}</span>}</div>}
                   </div>
                 </div>
               );
