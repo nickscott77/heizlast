@@ -45,9 +45,9 @@ const SETS = [
     bafa: "Nein",
     shopUrl: "https://www.kaeltebringer.de/products/trio-multisplit-klimaanlage-3-innengerate",
     indoorUnits: [
-      { name: "Wandgeraet 9000 BTU (Bad)", kw: 2.65 },
-      { name: "Wandgeraet 9000 BTU (Schlafzimmer)", kw: 2.65 },
-      { name: "Wandgeraet 9000 BTU (Wohnzimmer)", kw: 2.65 },
+      { name: "Wandgeraet 9000 BTU (Bad)", kw: 2.65, heat_kw: 3.48 },
+      { name: "Wandgeraet 9000 BTU (Schlafzimmer)", kw: 2.65, heat_kw: 3.48 },
+      { name: "Wandgeraet 9000 BTU (Wohnzimmer)", kw: 2.65, heat_kw: 3.48 },
     ],
   },
   {
@@ -64,9 +64,9 @@ const SETS = [
     bafa: "Nein",
     shopUrl: "https://www.breeze24.com/klimaanlagen/klimaanlage-sets/monosplit-und-multisplit-set/multisplit/wandgeraete/3-wandgeraete/daikin-set-3-wandgeraete-perfera-wifi-1-5/3-5/5-0-kw-ctxm15a-ftxm35a-ftxm50a-3mxm68a8-r32",
     indoorUnits: [
-      { name: "CTXM15A Perfera (Bad)", kw: 1.5 },
-      { name: "FTXM35A Perfera (Schlafzimmer)", kw: 3.5 },
-      { name: "FTXM50A Perfera (Wohnzimmer)", kw: 5.0 },
+      { name: "CTXM15A Perfera (Bad)", kw: 1.5, heat_kw: 2.0 },
+      { name: "FTXM35A Perfera (Schlafzimmer)", kw: 3.5, heat_kw: 4.0 },
+      { name: "FTXM50A Perfera (Wohnzimmer)", kw: 5.0, heat_kw: 5.8 },
     ],
   },
   {
@@ -84,9 +84,9 @@ const SETS = [
     shopUrl: "https://www.breeze24.com/klimaanlagen/aussengeraete/aussengeraete-split-systeme/aussengeraete-fuer-bis-zu-3-innengeraete/daikin-3mxm68a8-6-8-kw-multi-split-aussengeraet-fuer-3-innengeraete-r32",
     note: "Wittwer",
     indoorUnits: [
-      { name: "FTXA20CW Stylish (Schlafzimmer)", kw: 2.0 },
-      { name: "FTXA25CW Stylish (Wohnzimmer)", kw: 2.5 },
-      { name: "FVXM25B Perfera (Bad)", kw: 2.4 },
+      { name: "FTXA20CW Stylish (Schlafzimmer)", kw: 2.0, heat_kw: 2.5 },
+      { name: "FTXA25CW Stylish (Wohnzimmer)", kw: 2.5, heat_kw: 3.15 },
+      { name: "FVXM25B Perfera (Bad)", kw: 2.4, heat_kw: 3.4 },
     ],
   },
   {
@@ -103,8 +103,8 @@ const SETS = [
     bafa: "Ja (Daikin EKRHH Home Hub Adapter erforderlich)",
     shopUrl: "https://www.breeze24.com/klimaanlagen/aussengeraete/aussengeraete-split-systeme/aussengeraete-fuer-bis-zu-2-innengeraete/daikin-2mxm50a2v1b-9-8-5-0-kw-multi-split-aussengeraet-fuer-2-innengeraete-r32",
     indoorUnits: [
-      { name: "FTXA20CW Stylish (Wohnzimmer)", kw: 2.0 },
-      { name: "FVXM25B Perfera (Bad)", kw: 2.4 },
+      { name: "FTXA20CW Stylish (Wohnzimmer)", kw: 2.0, heat_kw: 2.5 },
+      { name: "FVXM25B Perfera (Bad)", kw: 2.4, heat_kw: 3.4 },
     ],
   },
   {
@@ -121,8 +121,8 @@ const SETS = [
     bafa: "Ja (Daikin EKRHH Home Hub Adapter erforderlich)",
     shopUrl: "https://www.breeze24.com/klimaanlagen/klimaanlage-sets/monosplit-und-multisplit-set/multisplit/wandgeraete/2-wandgeraete/daikin-set-ctxa15cw-ftxa20cw-2mxm50a2v1b-9/8-wandgeraete-stylish-wifi-1-5/2-0-kw-r32-klimaanlag",
     indoorUnits: [
-      { name: "CTXA15CW Stylish (Bad)", kw: 1.5 },
-      { name: "FTXA20CW Stylish (Wohnzimmer)", kw: 2.0 },
+      { name: "CTXA15CW Stylish (Bad)", kw: 1.5, heat_kw: 2.0 },
+      { name: "FTXA20CW Stylish (Wohnzimmer)", kw: 2.0, heat_kw: 2.5 },
     ],
   },
   {
@@ -139,9 +139,9 @@ const SETS = [
     bafa: "Ja (CZ-CAPRA1 P-Link Adapter je IG erforderlich)",
     shopUrl: "https://www.breeze24.com/klimaanlagen/aussengeraete/aussengeraete-split-systeme/aussengeraete-fuer-bis-zu-2-innengeraete/panasonic-cu-3z75abec-7-5-kw-multi-split-aussengeraet-fuer-3-inneneinheiten-r32-power-heat",
     indoorUnits: [
-      { name: "CS-Z20ZKEW Etherea (Bad)", kw: 2.0 },
-      { name: "CS-Z25ZKEW Etherea (Schlafzimmer)", kw: 2.5 },
-      { name: "CS-Z50ZKEW Etherea (Wohnzimmer)", kw: 5.0 },
+      { name: "CS-Z20ZKEW Etherea (Bad)", kw: 2.0, heat_kw: 2.8 },
+      { name: "CS-Z25ZKEW Etherea (Schlafzimmer)", kw: 2.5, heat_kw: 3.4 },
+      { name: "CS-Z50ZKEW Etherea (Wohnzimmer)", kw: 5.0, heat_kw: 5.8 },
     ],
   },
   {
@@ -158,8 +158,8 @@ const SETS = [
     bafa: "Nein",
     shopUrl: "https://www.kaeltebringer.de/products/duo-multisplit-klimaanlage-2-innengeraete",
     indoorUnits: [
-      { name: "Wandgeraet 9000 BTU (Bad)", kw: 2.65 },
-      { name: "Wandgeraet 9000 BTU (Wohnzimmer)", kw: 2.65 },
+      { name: "Wandgeraet 9000 BTU (Bad)", kw: 2.65, heat_kw: 3.48 },
+      { name: "Wandgeraet 9000 BTU (Wohnzimmer)", kw: 2.65, heat_kw: 3.48 },
     ],
   },
   {
@@ -176,8 +176,8 @@ const SETS = [
     bafa: "Ja (CZ-CAPRA1 P-Link Adapter je IG erforderlich)",
     shopUrl: "https://www.breeze24.com/klimaanlagen/aussengeraete/aussengeraete-split-systeme/aussengeraete-fuer-bis-zu-2-innengeraete/panasonic-cu-2z50abec-5-3-kw-multi-split-aussengeraet-fuer-2-inneneinheiten-r32-power-heat",
     indoorUnits: [
-      { name: "CS-HZ25ZKE Nordic (Bad)", kw: 2.5 },
-      { name: "CS-HZ35ZKE Nordic (Wohnzimmer)", kw: 3.5 },
+      { name: "CS-HZ25ZKE Nordic (Bad)", kw: 2.5, heat_kw: 3.2 },
+      { name: "CS-HZ35ZKE Nordic (Wohnzimmer)", kw: 3.5, heat_kw: 4.0 },
     ],
   },
   {
@@ -194,8 +194,8 @@ const SETS = [
     bafa: "Ja (CZ-CAPRA1 P-Link Adapter je IG erforderlich)",
     shopUrl: "https://www.breeze24.com/klimaanlagen/klimaanlage-sets/monosplit-und-multisplit-set/multisplit/wandgeraete/2-wandgeraete/panasonic-set-2-wandgeraete-1-6/2-5-kw-cs-mz16zke-cz-z25zkew-cu-2z35tbe-r32-klimaanlage",
     indoorUnits: [
-      { name: "CS-MZ16ZKE (Bad)", kw: 1.6 },
-      { name: "CS-Z25ZKEW (Wohnzimmer)", kw: 2.5 },
+      { name: "CS-MZ16ZKE (Bad)", kw: 1.6, heat_kw: 2.6 },
+      { name: "CS-Z25ZKEW (Wohnzimmer)", kw: 2.5, heat_kw: 3.4 },
     ],
   },
   {
@@ -212,8 +212,8 @@ const SETS = [
     bafa: "Ja (Daikin EKRHH Home Hub Adapter erforderlich)",
     shopUrl: "https://www.breeze24.com/klimaanlagen/aussengeraete/aussengeraete-split-systeme/aussengeraete-fuer-bis-zu-2-innengeraete/daikin-2mxm40a2v1b9-4-0-kw-multi-split-aussengeraet-fuer-2-innengeraete-r32",
     indoorUnits: [
-      { name: "FTXA20A2V1BW Stylish (Bad)", kw: 2.0 },
-      { name: "FTXA25A2V1BW Stylish (Wohnzimmer)", kw: 2.5 },
+      { name: "FTXA20A2V1BW Stylish (Bad)", kw: 2.0, heat_kw: 2.5 },
+      { name: "FTXA25A2V1BW Stylish (Wohnzimmer)", kw: 2.5, heat_kw: 2.8 },
     ],
   },
 ];
@@ -703,9 +703,9 @@ function App() {
                         <div style={{ overflowX:"auto" }}>
                           <table style={{ fontSize:12 }}>
                             <thead><tr>
-                              <th className="l">Geraet / Innengeraet</th>
-                              <th className="r">Min</th><th className="r">Nenn +7C</th><th className="r">Spez. -10C</th><th className="r">Max</th>
-                              <th className="r">@ {temp}C</th><th className="r">SCOP</th><th className="rp">Deckung</th>
+                              <th className="l" title="Geraet bzw. Innengeraet">Geraet / Innengeraet</th>
+                              <th className="r" title="Minimale Heizleistung – untere Regelgrenze des Aussengeraets">Min</th><th className="r" title="Nennheizleistung bei +7 C Aussentemperatur nach EN 14511 – Pruefstandard fuer SCOP">Nenn +7C</th><th className="r" title="Heizleistung bei -10 C Aussentemperatur – massgebend fuer die Auslegung in der Heizlastberechnung">Spez. -10C</th><th className="r" title="Maximale Heizleistung des Aussengeraets">Max</th>
+                              <th className="r" title={"Berechnete Heizleistung bei "+temp+" C Aussentemperatur"}>@ {temp}C</th><th className="r" title="Seasonal Coefficient of Performance – saisonale Heizeffizienz nach EN 14825">SCOP</th><th className="rp" title="Wie gut das Geraet die Gesamtheizlast abdeckt (100 % = vollstaendige Deckung)">Deckung</th>
                             </tr></thead>
                             <tbody>
                               {unitSets.map((s,si)=>{
@@ -726,8 +726,9 @@ function App() {
                                     {(s.indoorUnits||[]).map((iu,iui)=>(
                                       <tr key={"iu-"+si+"-"+iui} className="inner-row">
                                         <td className="l" style={{ paddingLeft:36, fontSize:11, color:"var(--muted)" }}><span style={{ color:"#475569", marginRight:6 }}>└</span>{iu.name}</td>
-                                        <td className="r" style={{ fontSize:11, color:"var(--muted)" }}>{(Number(iu.kw)||0).toFixed(1)} kW</td>
-                                        <td colSpan={5}/>
+                                        <td className="r"/>
+                                        <td className="r" style={{ fontSize:11, color:"var(--muted)" }}>{iu.heat_kw ? Number(iu.heat_kw).toFixed(1)+" kW" : ""}</td>
+                                        <td colSpan={4}/>
                                         <td className="rp" style={{ fontSize:11, color:"var(--muted)" }}>{Math.round(((Number(iu.kw)||0)/iuTot)*100)}%</td>
                                       </tr>
                                     ))}
