@@ -699,6 +699,7 @@ export default function App() {
                               {unitSets.map((s,si)=>{
                                 const capNow=capacityAtTemp(s,temp), cover=u.totalCur>0?(capNow*1000/u.totalCur)*100:999;
                                 const iuTot=(s.indoorUnits||[]).reduce((a,x)=>a+(Number(x.kw)||0),0)||1;
+                                const iuHeatTot=(s.indoorUnits||[]).reduce((a,x)=>a+(Number(x.heat_kw)||0),0)||1;
                                 return (
                                   <React.Fragment key={si}>
                                     <tr className="body-row">
@@ -711,15 +712,22 @@ export default function App() {
                                       <td className="r" style={{ color:"var(--accent2)", fontWeight:600 }}>{n(s.scop,2)}</td>
                                       <td className="rp"><CoverageBar percent={cover} /></td>
                                     </tr>
-                                    {(s.indoorUnits||[]).map((iu,iui)=>(
+                                    {(s.indoorUnits||[]).map((iu,iui)=>{
+                                      const roomName=(iu.name.match(/\(([^)]+)\)/)||[])[1]||"";
+                                      const room=(calc[s.target]?.rooms||[]).find(r=>r.name===roomName);
+                                      const iuCapM10=(Number(iu.heat_kw)||0)/iuHeatTot*(Number(s.heat_m10_kw)||0);
+                                      const iuCover=room&&room.loadMax>0?(iuCapM10*1000/room.loadMax)*100:null;
+                                      const iuCol=iuCover===null?"var(--muted)":iuCover>=120?"#10b981":iuCover>=100?"#22c55e":iuCover>=80?"#f59e0b":"#ef4444";
+                                      return (
                                       <tr key={"iu-"+si+"-"+iui} className="inner-row">
                                         <td className="l" style={{ paddingLeft:36, fontSize:11, color:"var(--muted)" }}><span style={{ color:"#475569", marginRight:6 }}>└</span>{iu.name}</td>
                                         <td className="r"/>
                                         <td className="r" style={{ fontSize:11, color:"var(--muted)" }}>{iu.heat_kw ? Number(iu.heat_kw).toFixed(1)+" kW" : ""}</td>
                                         <td colSpan={4}/>
-                                        <td className="rp" style={{ fontSize:11, color:"var(--muted)" }}>{Math.round(((Number(iu.kw)||0)/iuTot)*100)}%</td>
+                                        <td className="rp" style={{ fontSize:11, fontWeight:600, color:iuCol }}>{iuCover!==null?Math.round(iuCover)+"%":"–"}</td>
                                       </tr>
-                                    ))}
+                                      );
+                                    })}
                                   </React.Fragment>
                                 );
                               })}
