@@ -185,6 +185,24 @@ const SETS = [
       { name: "CS-Z25ZKEW (Wohnzimmer)", kw: 2.5 },
     ],
   },
+  {
+    name: "Daikin 2MXM40A2V1B9 + FTXA20A2V1BW/FTXA25A2V1BW Stylish (Einzelzimmer)",
+    heat_min_kw: 1.0, heat_nom_kw: 4.6, heat_max_kw: 6.0, heat_m10_kw: 3.2, scop: 4.64, target: 1,
+    seer: 8.53, cool_nom_kw: 4.0, cool_min_kw: 1.0, cool_max_kw: 4.5,
+    energy_class_heat: "A++", energy_class_cool: "A+++",
+    op_heat_min: -15, op_heat_max: 24, op_cool_min: -10, op_cool_max: 46, refrigerant: "R32",
+    pdesignh: 3.2, pdesignc: 4.0,
+    dimensions: "552 x 852 x 350 mm", weight: "36 kg",
+    noise_cool: 46, noise_heat: 48, sound_power_cool: 59, sound_power_heat: 61,
+    pipe_length_max: "30 m gesamt, max. 20 m je IG",
+    refrigerant_amount: "1,2 kg (R32), vorgefuellt",
+    bafa: "Ja (Daikin EKRHH Home Hub Adapter erforderlich)",
+    shopUrl: "https://www.breeze24.com/klimaanlagen/aussengeraete/aussengeraete-split-systeme/aussengeraete-fuer-bis-zu-2-innengeraete/daikin-2mxm40a2v1b9-4-0-kw-multi-split-aussengeraet-fuer-2-innengeraete-r32",
+    indoorUnits: [
+      { name: "FTXA20A2V1BW Stylish (Bad)", kw: 2.0 },
+      { name: "FTXA25A2V1BW Stylish (Wohnzimmer)", kw: 2.5 },
+    ],
+  },
 ];
 
 const defaultUnits = [
