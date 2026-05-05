@@ -95,24 +95,6 @@ const SETS = [
     ],
   },
   {
-    name: "Daikin 2MXM50A8 + FTXA20CW/FVXM25B Stylish+Perfera · Wittwer (Einzelzimmer)",
-    heat_min_kw: 1.3, heat_nom_kw: 5.6, heat_max_kw: 7.0, heat_m10_kw: 4.0, scop: 4.61, target: 1,
-    seer: 8.53, cool_nom_kw: 5.0, cool_min_kw: 1.8, cool_max_kw: 5.3,
-    energy_class_heat: "A++", energy_class_cool: "A+++",
-    op_heat_min: -15, op_heat_max: 24, op_cool_min: -10, op_cool_max: 46, refrigerant: "R32",
-    pdesignh: 4.0, pdesignc: 5.0,
-    dimensions: "734 x 852 x 350 mm", weight: "47 kg",
-    noise_cool: 47, noise_heat: 48, sound_power_cool: 60, sound_power_heat: 61,
-    pipe_length_max: "30 m gesamt, max. 20 m je IG",
-    refrigerant_amount: "1,7 kg (R32), vorgefuellt fuer 20 m",
-    bafa: "Ja (Daikin EKRHH Home Hub Adapter erforderlich)",
-    shopUrl: "https://www.breeze24.com/klimaanlagen/aussengeraete/aussengeraete-split-systeme/aussengeraete-fuer-bis-zu-2-innengeraete/daikin-2mxm50a2v1b-9-8-5-0-kw-multi-split-aussengeraet-fuer-2-innengeraete-r32",
-    indoorUnits: [
-      { name: "FTXA20CW Stylish (Wohnzimmer)", kw: 2.0 },
-      { name: "FVXM25B Perfera (Bad)", kw: 2.4 },
-    ],
-  },
-  {
     name: "Daikin 2MXM50A + CTXA15CW + FTXA20CW Stylish (Einzelzimmer)",
     heat_min_kw: 1.3, heat_nom_kw: 5.6, heat_max_kw: 7.0, heat_m10_kw: 4.0, scop: 4.61, target: 1,
     seer: 8.53, cool_nom_kw: 5.0, cool_min_kw: 1.8, cool_max_kw: 5.3,
@@ -219,24 +201,6 @@ const SETS = [
     indoorUnits: [
       { name: "FTXA20A2V1BW Stylish (Bad)", kw: 2.0, heat_kw: 2.5 },
       { name: "FTXA25A2V1BW Stylish (Wohnzimmer)", kw: 2.5, heat_kw: 2.8 },
-    ],
-  },
-  {
-    name: "Daikin 2MXM40A2V1B9 + FTXA20A2V1BW/FTXA25A2V1BW Stylish (Einzelzimmer)",
-    heat_min_kw: 1.0, heat_nom_kw: 4.6, heat_max_kw: 6.0, heat_m10_kw: 3.2, scop: 4.64, target: 1,
-    seer: 8.53, cool_nom_kw: 4.0, cool_min_kw: 1.0, cool_max_kw: 4.5,
-    energy_class_heat: "A++", energy_class_cool: "A+++",
-    op_heat_min: -15, op_heat_max: 24, op_cool_min: -10, op_cool_max: 46, refrigerant: "R32",
-    pdesignh: 3.2, pdesignc: 4.0,
-    dimensions: "552 x 852 x 350 mm", weight: "36 kg",
-    noise_cool: 46, noise_heat: 48, sound_power_cool: 59, sound_power_heat: 61,
-    pipe_length_max: "30 m gesamt, max. 20 m je IG",
-    refrigerant_amount: "1,2 kg (R32), vorgefuellt",
-    bafa: "Ja (Daikin EKRHH Home Hub Adapter erforderlich)",
-    shopUrl: "https://www.breeze24.com/klimaanlagen/aussengeraete/aussengeraete-split-systeme/aussengeraete-fuer-bis-zu-2-innengeraete/daikin-2mxm40a2v1b9-4-0-kw-multi-split-aussengeraet-fuer-2-innengeraete-r32",
-    indoorUnits: [
-      { name: "FTXA20A2V1BW Stylish (Bad)", kw: 2.0 },
-      { name: "FTXA25A2V1BW Stylish (Wohnzimmer)", kw: 2.5 },
     ],
   },
 ];
@@ -735,6 +699,7 @@ export default function App() {
                               {unitSets.map((s,si)=>{
                                 const capNow=capacityAtTemp(s,temp), cover=u.totalCur>0?(capNow*1000/u.totalCur)*100:999;
                                 const iuTot=(s.indoorUnits||[]).reduce((a,x)=>a+(Number(x.kw)||0),0)||1;
+                                const iuHeatTot=(s.indoorUnits||[]).reduce((a,x)=>a+(Number(x.heat_kw)||0),0)||1;
                                 return (
                                   <React.Fragment key={si}>
                                     <tr className="body-row">
@@ -747,15 +712,22 @@ export default function App() {
                                       <td className="r" style={{ color:"var(--accent2)", fontWeight:600 }}>{n(s.scop,2)}</td>
                                       <td className="rp"><CoverageBar percent={cover} /></td>
                                     </tr>
-                                    {(s.indoorUnits||[]).map((iu,iui)=>(
+                                    {(s.indoorUnits||[]).map((iu,iui)=>{
+                                      const roomName=(iu.name.match(/\(([^)]+)\)/)||[])[1]||"";
+                                      const room=(calc[s.target]?.rooms||[]).find(r=>r.name===roomName);
+                                      const iuCapM10=(Number(iu.heat_kw)||0)/iuHeatTot*(Number(s.heat_m10_kw)||0);
+                                      const iuCover=room&&room.loadMax>0?(iuCapM10*1000/room.loadMax)*100:null;
+                                      const iuCol=iuCover===null?"var(--muted)":iuCover>=120?"#10b981":iuCover>=100?"#22c55e":iuCover>=80?"#f59e0b":"#ef4444";
+                                      return (
                                       <tr key={"iu-"+si+"-"+iui} className="inner-row">
                                         <td className="l" style={{ paddingLeft:36, fontSize:11, color:"var(--muted)" }}><span style={{ color:"#475569", marginRight:6 }}>└</span>{iu.name}</td>
                                         <td className="r"/>
                                         <td className="r" style={{ fontSize:11, color:"var(--muted)" }}>{iu.heat_kw ? Number(iu.heat_kw).toFixed(1)+" kW" : ""}</td>
                                         <td colSpan={4}/>
-                                        <td className="rp" style={{ fontSize:11, color:"var(--muted)" }}>{Math.round(((Number(iu.kw)||0)/iuTot)*100)}%</td>
+                                        <td className="rp" style={{ fontSize:11, fontWeight:600, color:iuCol }}>{iuCover!==null?Math.round(iuCover)+"%":"–"}</td>
                                       </tr>
-                                    ))}
+                                      );
+                                    })}
                                   </React.Fragment>
                                 );
                               })}
