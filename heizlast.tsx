@@ -203,6 +203,25 @@ const SETS = [
       { name: "FTXA25A2V1BW Stylish (Wohnzimmer)", kw: 2.5, heat_kw: 2.8 },
     ],
   },
+  {
+    name: "Daikin 3MXM52A2V1B9 + FTXM20A2V1B/FTXM25A2V1B/FTXM42A2V1B Perfera (Ferienwohnung)",
+    heat_min_kw: 1.7, heat_nom_kw: 6.8, heat_max_kw: 9.0, heat_m10_kw: 4.5, scop: 4.60, target: 0,
+    seer: 8.50, cool_nom_kw: 5.2, cool_min_kw: 1.7, cool_max_kw: 6.0,
+    energy_class_heat: "A++", energy_class_cool: "A+++",
+    op_heat_min: -15, op_heat_max: 18, op_cool_min: -10, op_cool_max: 46, refrigerant: "R32",
+    pdesignh: 6.8, pdesignc: 5.2,
+    dimensions: "734 x 974 x 408 mm", weight: "57 kg",
+    noise_cool: 46, noise_heat: 47, sound_power_cool: 59, sound_power_heat: 60,
+    pipe_length_max: "50 m gesamt, max. 25 m je IG",
+    refrigerant_amount: "1,80 kg (R32), vorgefuellt fuer 30 m",
+    bafa: "Nein",
+    shopUrl: "https://www.breeze24.com/klimaanlagen/aussengeraete/aussengeraete-split-systeme/aussengeraete-fuer-bis-zu-3-innengeraete/daikin-3mxm52a2v1b-9/8-5-2-kw-multi-split-aussengeraet-fuer-3-innengeraete-r32",
+    indoorUnits: [
+      { name: "FTXM20A2V1B Perfera (Bad)", kw: 2.0, heat_kw: 2.5 },
+      { name: "FTXM25A2V1B Perfera (Schlafzimmer)", kw: 2.5, heat_kw: 3.4 },
+      { name: "FTXM42A2V1B Perfera (Wohnzimmer)", kw: 4.2, heat_kw: 5.4 },
+    ],
+  },
 ];
 
 const defaultUnits = [
