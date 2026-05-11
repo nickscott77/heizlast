@@ -241,6 +241,24 @@ const SETS = [
       { name: "SRK35ZSX (Wohnzimmer)", kw: 3.5, heat_kw: 4.5 },
     ],
   },
+  {
+    name: "Mitsubishi Heavy SCM45ZS-W + SRK25ZSX/SRF25ZS-W (Einzelzimmer)",
+    heat_min_kw: 1.0, heat_nom_kw: 5.3, heat_max_kw: 6.5, heat_m10_kw: 4.1, scop: 4.70, target: 1,
+    seer: 9.10, cool_nom_kw: 4.5, cool_min_kw: 1.5, cool_max_kw: 6.4,
+    energy_class_heat: "A++", energy_class_cool: "A+++",
+    op_heat_min: -15, op_heat_max: 24, op_cool_min: -15, op_cool_max: 46, refrigerant: "R32",
+    pdesignh: 4.1, pdesignc: 4.5,
+    dimensions: "595 x 870 x 290 mm", weight: "40 kg",
+    noise_cool: 50, noise_heat: 52, sound_power_cool: 63, sound_power_heat: 65,
+    pipe_length_max: "40 m gesamt, max. 20 m je IG",
+    refrigerant_amount: "1,40 kg (R32), vorgefuellt fuer 20 m",
+    bafa: "Ja",
+    shopUrl: "https://www.breeze24.com/klimaanlagen/aussengeraete/aussengeraete-split-systeme/aussengeraete-fuer-bis-zu-2-innengeraete/mitsubishi-heavy-aussengeraet-4-5-kw-scm45zs-w-r32",
+    indoorUnits: [
+      { name: "SRK25ZSX (Wohnzimmer)", kw: 2.5, heat_kw: 3.2 },
+      { name: "SRF25ZS-W Truhengeraet (Bad)", kw: 2.5, heat_kw: 2.9 },
+    ],
+  },
 ];
 
 const defaultUnits = [
