@@ -209,7 +209,7 @@ const SETS = [
     seer: 8.50, cool_nom_kw: 5.2, cool_min_kw: 1.7, cool_max_kw: 6.0,
     energy_class_heat: "A++", energy_class_cool: "A+++",
     op_heat_min: -15, op_heat_max: 18, op_cool_min: -10, op_cool_max: 46, refrigerant: "R32",
-    pdesignh: 6.8, pdesignc: 5.2,
+    pdesignh: 4.5, pdesignc: 5.2,
     dimensions: "734 x 974 x 408 mm", weight: "57 kg",
     noise_cool: 46, noise_heat: 47, sound_power_cool: 59, sound_power_heat: 60,
     pipe_length_max: "50 m gesamt, max. 25 m je IG",
