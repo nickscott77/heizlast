@@ -69,6 +69,42 @@ const SETS = [
       { name: "FTXM35A Perfera (Wohnzimmer)", kw: 3.5, heat_kw: 4.0 },
     ],
   },
+  {
+    name: "Mitsubishi Heavy SCM45ZS-W + SRK20ZSX/SRF25ZS-W (Einzelzimmer)",
+    heat_min_kw: 1.0, heat_nom_kw: 5.3, heat_max_kw: 6.5, heat_m10_kw: 4.1, scop: 4.70, target: 1,
+    seer: 9.10, cool_nom_kw: 4.5, cool_min_kw: 1.5, cool_max_kw: 6.4,
+    energy_class_heat: "A++", energy_class_cool: "A+++",
+    op_heat_min: -20, op_heat_max: 24, op_cool_min: -15, op_cool_max: 46, refrigerant: "R32",
+    pdesignh: 4.1, pdesignc: 4.5,
+    dimensions: "595 x 870 x 290 mm", weight: "40 kg",
+    noise_cool: 50, noise_heat: 52, sound_power_cool: 63, sound_power_heat: 65,
+    pipe_length_max: "25 m je IG",
+    refrigerant_amount: "1,40 kg (R32, vorgefuellt)",
+    bafa: "Ja",
+    shopUrl: "https://mhiae.com/units/scm45zs-w/",
+    indoorUnits: [
+      { name: "SRK20ZSX (Wohnzimmer)", kw: 2.0, heat_kw: 2.7 },
+      { name: "SRF25ZS-W Truhengeraet (Bad)", kw: 2.5, heat_kw: 2.9 },
+    ],
+  },
+  {
+    name: "Daikin 2MXM40A9 + FTXM20A/FVXM25B Perfera (Einzelzimmer)",
+    heat_min_kw: 1.3, heat_nom_kw: 4.2, heat_max_kw: 5.5, heat_m10_kw: 3.2, scop: 4.64, target: 1,
+    seer: 8.53, cool_nom_kw: 4.0, cool_min_kw: 1.3, cool_max_kw: 5.5,
+    energy_class_heat: "A++", energy_class_cool: "A+++",
+    op_heat_min: -15, op_heat_max: 24, op_cool_min: -10, op_cool_max: 46, refrigerant: "R32",
+    pdesignh: 3.2, pdesignc: 4.0,
+    dimensions: "550 x 765 x 285 mm", weight: "36 kg",
+    noise_cool: 46, noise_heat: 48, sound_power_cool: 60, sound_power_heat: 60,
+    pipe_length_max: "20 m gesamt, max. 15 m Hoehendiff.",
+    refrigerant_amount: "vorgefuellt; +0,02 kg/m ab 20 m (R32)",
+    bafa: "Ja",
+    shopUrl: "https://www.daikin.de",
+    indoorUnits: [
+      { name: "FTXM20A Perfera (Wohnzimmer)", kw: 2.0, heat_kw: 2.5 },
+      { name: "FVXM25B Perfera Truhengeraet (Bad)", kw: 2.5, heat_kw: 3.4 },
+    ],
+  },
 ];
 
 const defaultUnits = [
