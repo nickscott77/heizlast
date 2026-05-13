@@ -39,7 +39,7 @@ const SETS = [
   },
   {
     name: "Daikin 3MXM68A8 + FTXM20A/FVXM25B/FTXM35A Perfera (Ferienwohnung)",
-    heat_min_kw: 2.2, heat_nom_kw: 8.6, heat_max_kw: 10.3, heat_m10_kw: 5.7, scop: 4.26, target: 0,
+    heat_min_kw: 2.31, heat_nom_kw: 8.6, heat_max_kw: 10.65, heat_m10_kw: 5.7, scop: 4.26, target: 0,
     seer: 7.71, cool_nom_kw: 6.8, cool_min_kw: 1.7, cool_max_kw: 8.0,
     energy_class_heat: "A+", energy_class_cool: "A++",
     op_heat_min: -20, op_heat_max: 24, op_cool_min: -10, op_cool_max: 46, refrigerant: "R32",
@@ -76,7 +76,7 @@ const SETS = [
   },
   {
     name: "Daikin 2MXM40A9 + FTXM25A/FVXM25B Perfera (Einzelzimmer)",
-    heat_min_kw: 1.3, heat_nom_kw: 4.2, heat_max_kw: 5.5, heat_m10_kw: 3.2, scop: 4.64, target: 1,
+    heat_min_kw: 1.3, heat_nom_kw: 4.2, heat_max_kw: 4.6, heat_m10_kw: 3.2, scop: 4.64, target: 1,
     seer: 8.53, cool_nom_kw: 4.0, cool_min_kw: 1.3, cool_max_kw: 5.5,
     energy_class_heat: "A++", energy_class_cool: "A+++",
     op_heat_min: -15, op_heat_max: 24, op_cool_min: -10, op_cool_max: 46, refrigerant: "R32",
