@@ -18,6 +18,25 @@ function capacityAtTemp(s, t) {
 function fmt(w) { return w >= 1000 ? (w / 1000).toFixed(1) + " kW" : Math.round(w) + " W"; }
 
 const SETS = [
+  {
+    name: "Mitsubishi Heavy SCM60ZS-W + SRK20ZSX/SRF25ZS-W/SRK35ZSX (Ferienwohnung)",
+    heat_min_kw: 1.0, heat_nom_kw: 6.8, heat_max_kw: 7.8, heat_m10_kw: 4.7, scop: 4.60, target: 0,
+    seer: 8.80, cool_nom_kw: 6.0, cool_min_kw: 1.7, cool_max_kw: 7.5,
+    energy_class_heat: "A++", energy_class_cool: "A+++",
+    op_heat_min: -15, op_heat_max: 24, op_cool_min: -15, op_cool_max: 46, refrigerant: "R32",
+    pdesignh: 4.7, pdesignc: 6.0,
+    dimensions: "640 x 915 x 290 mm", weight: "48.5 kg",
+    noise_cool: 50, noise_heat: 52, sound_power_cool: 62, sound_power_heat: 64,
+    pipe_length_max: "40 m gesamt, max. 25 m je IG",
+    refrigerant_amount: "1,80 kg (R32), vorgefuellt fuer 40 m",
+    bafa: "Ja",
+    shopUrl: "https://www.breeze24.com/klimaanlagen/aussengeraete/aussengeraete-split-systeme/aussengeraete-fuer-bis-zu-3-innengeraete/mitsubishi-heavy-aussengeraet-6-0-kw-scm60zs-w-fuer-2-3-innengeraete-r32",
+    indoorUnits: [
+      { name: "SRK20ZSX (Schlafzimmer)", kw: 2.0, heat_kw: 2.7 },
+      { name: "SRF25ZS-W Truhengeraet (Bad)", kw: 2.5, heat_kw: 2.9 },
+      { name: "SRK35ZSX (Wohnzimmer)", kw: 3.5, heat_kw: 4.0 },
+    ],
+  },
 ];
 
 const defaultUnits = [
