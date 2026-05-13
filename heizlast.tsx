@@ -92,6 +92,24 @@ const SETS = [
       { name: "FVXM25B Perfera Truhengeraet (Bad)", kw: 2.5, heat_kw: 3.4 },
     ],
   },
+  {
+    name: "Daikin 2MXM50A9 + FTXM25A/FVXM25B Perfera (Einzelzimmer)",
+    heat_min_kw: 1.2, heat_nom_kw: 5.6, heat_max_kw: 5.8, heat_m10_kw: 3.12, scop: 4.61, target: 1,
+    seer: 8.53, cool_nom_kw: 5.0, cool_min_kw: 1.8, cool_max_kw: 5.3,
+    energy_class_heat: "A++", energy_class_cool: "A+++",
+    op_heat_min: -15, op_heat_max: 18, op_cool_min: -10, op_cool_max: 46, refrigerant: "R32",
+    pdesignh: 3.12, pdesignc: 5.0,
+    dimensions: "852 x 552 x 350 mm", weight: "41 kg",
+    noise_cool: 48, noise_heat: 50, sound_power_cool: 61, sound_power_heat: 62,
+    pipe_length_max: "30 m gesamt, max. 25 m je IG",
+    refrigerant_amount: "1,15 kg (R32)",
+    bafa: "Ja",
+    shopUrl: "https://www.daikin.de",
+    indoorUnits: [
+      { name: "FTXM25A Perfera (Wohnzimmer)", kw: 2.5, heat_kw: 3.4 },
+      { name: "FVXM25B Perfera Truhengeraet (Bad)", kw: 2.5, heat_kw: 3.4 },
+    ],
+  },
 ];
 
 const defaultUnits = [
