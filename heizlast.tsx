@@ -75,7 +75,7 @@ const SETS = [
     ],
   },
   {
-    name: "Daikin 2MXM40A9 + FTXM20A/FVXM25B Perfera (Einzelzimmer)",
+    name: "Daikin 2MXM40A9 + FTXM25A/FVXM25B Perfera (Einzelzimmer)",
     heat_min_kw: 1.3, heat_nom_kw: 4.2, heat_max_kw: 5.5, heat_m10_kw: 3.2, scop: 4.64, target: 1,
     seer: 8.53, cool_nom_kw: 4.0, cool_min_kw: 1.3, cool_max_kw: 5.5,
     energy_class_heat: "A++", energy_class_cool: "A+++",
@@ -88,7 +88,7 @@ const SETS = [
     bafa: "Ja",
     shopUrl: "https://www.daikin.de",
     indoorUnits: [
-      { name: "FTXM20A Perfera (Wohnzimmer)", kw: 2.0, heat_kw: 2.5 },
+      { name: "FTXM25A Perfera (Wohnzimmer)", kw: 2.5, heat_kw: 3.4 },
       { name: "FVXM25B Perfera Truhengeraet (Bad)", kw: 2.5, heat_kw: 3.4 },
     ],
   },
